@@ -1,16 +1,16 @@
 {
   "name": "uiv-language",
-  "displayName": "UIV",
-  "description": "Unit Informed Values syntax highlighting",
-  "version": "0.0.3",
+  "displayName": "UIV / UT",
+  "description": "Unit Informed Values and Unit Types syntax highlighting",
+  "version": "0.0.4",
   "engines": { "vscode": "^1.80.0" },
   "categories": ["Programming Languages"],
   "contributes": {
     "languages": [
       {
         "id": "uiv",
-        "aliases": ["UIV"],
-        "extensions": [".uiv"],
+        "aliases": ["UIV", "UT", "Unit Types", "Unit Informed Values"],
+        "extensions": [".uiv", ".ut"],
         "configuration": "./language-configuration.json"
       }
     ],

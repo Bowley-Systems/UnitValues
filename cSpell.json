@@ -1,0 +1,15 @@
+{
+  "version": "0.2",
+  "language": "en-US",
+  "ignorePaths": [
+    "**/*.{asc,lib,asy}"
+  ],
+  "words": [
+    "Bowley",
+    "Picounits",
+    "wgbowley",
+    "coercivity",
+    "matweb",
+    "femm"
+  ]
+}

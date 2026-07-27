@@ -13,3 +13,17 @@ Currently picounits is the only tool with an implementation of .uiv:
 Jump to the **release branch** of picounits for more details: 
 <a href="https://github.com/wgbowley/PicoUnits/tree/release">picounits/release</a>
 
+## Installation
+
+To install the Unit-Informed Values `(UIV)` language extension for Visual Studio Code:
+
+### Windows
+
+```powershell
+Copy-Item -Recurse -Force $PWD "$HOME\.vscode\extensions\uiv-0.0.4"
+```
+
+### Linux/MacOs
+```bash
+cp -r . "$HOME/.vscode/extensions/uiv-0.0.4"
+```

@@ -1,11 +1,20 @@
 {
   "scopeName": "source.ut",
   "patterns": [
+    { "include": "#comment" },
     { "include": "#section" },
     { "include": "#unit_definition" },
-    { "include": "#comment" }
+    { "include": "#math_expression" }
   ],
   "repository": {
+    "comment": {
+      "patterns": [
+        {
+          "name": "comment.line.ut",
+          "match": "#.*$"
+        }
+      ]
+    },
     "section": {
       "patterns": [
         {
@@ -17,59 +26,20 @@
     "unit_definition": {
       "patterns": [
         {
-          "match": "^\\s*([a-zA-ZΑ-Ωα-ωρσ_][a-zA-Z0-9_]*)\\s*:\\s*(.*)$",
+          "match": "^\\s*([a-zA-ZΑ-Ωα-ωρσ_][a-zA-Z0-9_]*)\\s*(:)",
           "captures": {
             "1": { "name": "entity.other.unit-symbol.ut" },
-            "2": { 
-              "patterns": [
-                { "include": "#math_operator" },
-                { "include": "#exponent" },
-                { "include": "#number" },
-                { "include": "#dimension_symbol" }
-              ]
-            }
+            "2": { "name": "punctuation.separator.key-value.ut" }
           }
         }
       ]
     },
-    "dimension_symbol": {
+    "math_expression": {
       "patterns": [
-        {
-          "name": "support.type.primitive.ut",
-          "match": "\\b[A-Za-zΑ-Ωα-ω]+\\b"
-        }
-      ]
-    },
-    "math_operator": {
-      "patterns": [
-        {
-          "name": "keyword.operator.arithmetic.ut",
-          "match": "[*^]"
-        }
-      ]
-    },
-    "exponent": {
-      "patterns": [
-        {
-          "name": "constant.numeric.exponent.ut",
-          "match": "\\-[0-9]+"
-        }
-      ]
-    },
-    "number": {
-      "patterns": [
-        {
-          "name": "constant.numeric.ut",
-          "match": "\\b[0-9]+\\b"
-        }
-      ]
-    },
-    "comment": {
-      "patterns": [
-        {
-          "name": "comment.line.ut",
-          "match": "#.*$"
-        }
+        { "name": "keyword.operator.arithmetic.ut", "match": "[*^]" },
+        { "name": "constant.numeric.exponent.ut", "match": "\\-[0-9]+" },
+        { "name": "constant.numeric.ut", "match": "\\b[0-9]+\b" },
+        { "name": "support.type.primitive.ut", "match": "\\b[A-Za-zΑ-Ωα-ω]+\\b" }
       ]
     }
   }

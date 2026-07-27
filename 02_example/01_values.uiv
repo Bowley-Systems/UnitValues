@@ -1,0 +1,54 @@
+# Example unit informed values file using NdFeB material schema
+[version]
+format: 0.1.0
+unit_frame: example_derived.ut
+
+
+[NdFeB.meta]
+tag: "dipole"
+composition: "Sintered: Neodymium, Iron, Boron"
+temperature_grade: "Standard - non high temperature resistance"
+note: "matweb.com: `Alliance N-52 Sintered NdFeB Neodymium Magnet`; femm: N30-55 Series"
+last_updated: "2026-01-20"
+
+[NdFeB.physical]
+density: 7600 (ρ)
+
+[NdFeB.magnetic]
+relative_permeability: [1.05, 1.05]
+remanence: 1.104 (Br)
+
+[NdFeB.grades]
+N30: [836420, 1.104] k(Hc), (Br)
+N33: [878619, 1.104] k(Hc), (Br)
+N35: [905659,1.104] k(Hc), (Br)
+N38: [944771, 1.104] k(Hc), (Br)
+N40: [969969, 1.104] k(Hc), (Br)
+N42: [994529, 1.104] k(Hc), (Br)
+N45: [1030272, 1.104] k(Hc), (Br)
+N48: [1014538, 1.104] k(Hc), (Br)
+N50: [987837, 1.104] k(Hc), (Br)
+N52: [956180, 1.104] k(Hc), (Br)
+N55: [922850, 1.104] k(Hc), (Br)
+
+[NdFeB.electrical]
+relative_permittivity: [0, 0]
+conductivity: 0.667e6 (σ)
+
+temperature_conductivity: [
+  [273.0, 0.697],
+  [293.0, 0.667],
+  [323.0, 0.663],
+  [373.0, 0.656],
+  [423.0, 0.649],
+  [473.0, 0.643]
+] (K), M(S_m)
+
+[NdFeB.thermal]
+reference_temperature: 298.15 (K)
+curie_temperature: 583.15 (K)
+
+# Refer: https://smmagnetics.com/pages/neodymium-material-specs
+# Temperature coefficients: %/K
+alpha_remanence: -0.12 (K^-1)
+beta_coercivity: -0.6 (K^-1)

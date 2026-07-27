@@ -1,0 +1,46 @@
+{
+  "scopeName": "source.ut",
+  "patterns": [
+    { "include": "#comment" },
+    { "include": "#section" },
+    { "include": "#unit_definition" },
+    { "include": "#math_expression" }
+  ],
+  "repository": {
+    "comment": {
+      "patterns": [
+        {
+          "name": "comment.line.ut",
+          "match": "#.*$"
+        }
+      ]
+    },
+    "section": {
+      "patterns": [
+        {
+          "name": "entity.name.section.ut",
+          "match": "\\[[A-Za-z0-9_.]+\\]"
+        }
+      ]
+    },
+    "unit_definition": {
+      "patterns": [
+        {
+          "match": "^\\s*([a-zA-ZΑ-Ωα-ωρσ_][a-zA-Z0-9_]*)\\s*(:)",
+          "captures": {
+            "1": { "name": "entity.other.unit-symbol.ut" },
+            "2": { "name": "punctuation.separator.key-value.ut" }
+          }
+        }
+      ]
+    },
+    "math_expression": {
+      "patterns": [
+        { "name": "keyword.operator.arithmetic.ut", "match": "[*^]" },
+        { "name": "constant.numeric.exponent.ut", "match": "\\-[0-9]+" },
+        { "name": "constant.numeric.ut", "match": "\\b[0-9]+\b" },
+        { "name": "support.type.primitive.ut", "match": "\\b[A-Za-zΑ-Ωα-ω]+\\b" }
+      ]
+    }
+  }
+}

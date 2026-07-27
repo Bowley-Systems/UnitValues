@@ -75,10 +75,10 @@ To install the Unit-Informed Values (`UIV`) language extension locally for Visua
 ### Windows
 
 ```powershell
-Copy-Item -Recurse -Force $PWD "$HOME\.vscode\extensions\uiv-0.0.4"
+Copy-Item -Recurse -Force $PWD "$HOME\.vscode\extensions\uiv-0.0.6"
 ```
 
 ### Linux/MacOs
 ```bash
-cp -r . "$HOME/.vscode/extensions/uiv-0.0.4"
+cp -r . "$HOME/.vscode/extensions/uiv-0.0.6"
 ```

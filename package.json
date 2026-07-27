@@ -3,19 +3,30 @@
   "publisher": "wgbowley",
   "displayName": "UIV / UT",
   "description": "Unit Informed Values and Unit Types syntax highlighting",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "engines": { "vscode": "^1.80.0" },
   "categories": ["Programming Languages"],
   "contributes": {
     "languages": [
       {
+        "id": "ut",
+        "aliases": ["Unit Types", "UT"],
+        "extensions": [".ut"],
+        "configuration": "./00_configuration/language-configuration.json"
+      },
+      {
         "id": "uiv",
-        "aliases": ["UIV", "UT", "Unit Types", "Unit Informed Values"],
-        "extensions": [".uiv", ".ut"],
+        "aliases": ["Unit Informed Values", "UIV"],
+        "extensions": [".uiv"],
         "configuration": "./00_configuration/language-configuration.json"
       }
     ],
     "grammars": [
+      {
+        "language": "ut",
+        "scopeName": "source.ut",
+        "path": "./01_syntaxes/ut.tmLanguage.json"
+      },
       {
         "language": "uiv",
         "scopeName": "source.uiv",

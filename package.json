@@ -12,13 +12,13 @@
         "id": "ut",
         "aliases": ["Unit Types", "UT"],
         "extensions": [".ut"],
-        "configuration": "./configuration/language-configuration.json"
+        "configuration": "./config/language-configuration.json"
       },
       {
         "id": "uiv",
         "aliases": ["Unit Informed Values", "UIV"],
         "extensions": [".uiv"],
-        "configuration": "./configuration/language-configuration.json"
+        "configuration": "./config/language-configuration.json"
       }
     ],
     "grammars": [

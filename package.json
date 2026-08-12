@@ -12,25 +12,25 @@
         "id": "ut",
         "aliases": ["Unit Types", "UT"],
         "extensions": [".ut"],
-        "configuration": "./00_configuration/language-configuration.json"
+        "configuration": "./format/language-configuration.json"
       },
       {
         "id": "uiv",
         "aliases": ["Unit Informed Values", "UIV"],
         "extensions": [".uiv"],
-        "configuration": "./00_configuration/language-configuration.json"
+        "configuration": "./format/language-configuration.json"
       }
     ],
     "grammars": [
       {
         "language": "ut",
         "scopeName": "source.ut",
-        "path": "./01_syntaxes/ut.tmLanguage.json"
+        "path": "./syntaxes/ut.tmLanguage.json"
       },
       {
         "language": "uiv",
         "scopeName": "source.uiv",
-        "path": "./01_syntaxes/uiv.tmLanguage.json"
+        "path": "./syntaxes/uiv.tmLanguage.json"
       }
     ]
   }

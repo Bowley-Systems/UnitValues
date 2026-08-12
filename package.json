@@ -2,7 +2,7 @@
   "name": "uiv",
   "publisher": "wgbowley",
   "displayName": "UIV / UT",
-  "description": "Unit Informed Values and Unit Types syntax highlighting",
+  "description": "UnitValues Syntax Highlighting",
   "version": "0.0.6",
   "engines": { "vscode": "^1.80.0" },
   "categories": ["Programming Languages"],

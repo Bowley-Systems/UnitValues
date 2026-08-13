@@ -287,6 +287,16 @@ temperature_conductivity: [
 ] (K), (k)
 \end{lstlisting}
 
+\begin{quote}
+  \textbf{Note:}
+
+  Nested arrays may represent column-wise data. When multiple unit
+  expressions follow an array, each unit is assigned to the corresponding
+  column. Thus, \texttt{(K), (k)} assigns kelvin to the first column and
+  the derived unit \texttt{k} to the second column. The unit \texttt{k}
+  is defined in the active unit frame.
+\end{quote}
+
 \newpage
 \needspace{3\baselineskip}
 \subsection{Strings and Comments}
@@ -394,5 +404,35 @@ output_energy: 1.0      (kg*m^2*s^-2)   # Defines unit via construction
 output_signal: 5.0      (V)             # Defined unit `V` for voltage
 inlet_pressure: 101     k((*@$\rho$@*))            # Defined unit `(*@$\rho$@*)` for pressure with kilo prefix
 \end{lstlisting}
+
+% ============================================================
+\section{Error Reference}
+% ============================================================
+
+\subsection{Errors}
+
+\begin{enumerate}
+  \item \textbf{E001} --- ParserError: Generic parser error when parsing fails.
+  \item \textbf{E002} --- ParseListFailure: Failed to parse a list or array structure.
+  \item \textbf{E003} --- UnknownOperator: Unsupported operator used in unit construction.
+  \item \textbf{E004} --- UnknownPrefix: Invalid prefix used.
+  \item \textbf{E005} --- FailedCasting: Failed to cast value to language primitive type.
+  \item \textbf{E006} --- ColumnAttribute: Nested array column index out of range.
+  \item \textbf{E007} --- UnsupportedType: Unsupported type during unit construction.
+  \item \textbf{E008} --- UnbalancedDepth: Unbalanced parentheses, brackets, or braces.
+  \item \textbf{E009} --- InvalidSectionError: Malformed section header.
+  \item \textbf{E010} --- DuplicateSectionError: Duplicate section in file.
+  \item \textbf{E012} --- InvalidKeyError: Malformed key-value pair.
+  \item \textbf{E014} --- InvalidUnitError: Invalid or malformed unit definition.
+  \item \textbf{E015} --- UnitNotFoundError: Referenced unit doesn't exist.
+\end{enumerate}
+
+\subsection{Warnings}
+
+\begin{enumerate}
+  \item \textbf{W001} --- BackCompatibilityWarning: Missing 'format' key in version section.
+  \item \textbf{W002} --- UnitFrameCompatibilityWarning: Missing 'unit\_frame' directive.
+\end{enumerate}
+
 
 \end{document}

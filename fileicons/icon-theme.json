@@ -1,11 +1,23 @@
 {
   "iconDefinitions": {
-    "uiv": {
-      "iconPath": "../logos/icon.svg"
+    "myCustomIcon": {
+      "iconPath": "./icon.svg"
     }
   },
   "fileExtensions": {
-    "ut": "uiv",
-    "uiv": "uiv"
+    "ut": "myCustomIcon",
+    "uiv": "myCustomIcon"
+  },
+  "light": {
+    "fileExtensions": {
+      "ut": "myCustomIcon",
+      "uiv": "myCustomIcon"
+    }
+  },
+  "highContrast": {
+    "fileExtensions": {
+      "ut": "myCustomIcon",
+      "uiv": "myCustomIcon"
+    }
   }
 }

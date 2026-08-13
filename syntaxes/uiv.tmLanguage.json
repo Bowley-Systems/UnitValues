@@ -1,4 +1,5 @@
 {
+  "name": "Unit Informed Values",
   "scopeName": "source.uiv",
   "patterns": [
     { "include": "#section" },

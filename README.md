@@ -13,7 +13,10 @@ Hope you think the same,
 P.S: Thanks for downloading the UnitValues repository `▽`ʃ♡
 -->
 
-<p align="center"><img src="./logos/logo.png" alt="UnitValues" style="max-width:600px;"> </p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Bowley-Systems/UnitValues/refs/heads/vscode-integration/logos/logo.png" alt="UnitValues" style="max-width:600px;">
+</p>
 <p align="center">A typed language for numerical quantities.</p>
 
 # Overview
@@ -66,18 +69,3 @@ inlet_pressure: 101     k(ρ)            # Defined unit `ρ` for pressure with k
 
 All internal documentation can be found within this repo's [issues](https://github.com/Bowley-Systems/UnitValues/issues).
 
-## Local Installation
-
-To install the UnitValues language extension locally for Visual Studio Code:
-
-### Windows
-
-```powershell
-Copy-Item -Recurse -Force $PWD "$HOME\.vscode\extensions\uiv-0.0.6"
-```
-
-### Linux / macOS
-
-```bash
-cp -r . "$HOME/.vscode/extensions/uiv-0.0.6"
-```

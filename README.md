@@ -14,7 +14,7 @@ Hope you think the same,
 P.S: Thanks for downloading the UnitValues repository `▽`ʃ♡
 -->
 
-<p align="center"><img src="logos/logo.png" alt="UnitValues" style="max-width:600px;"> </p>
+<p align="center"><img src="./logos/logo.png" alt="UnitValues" style="max-width:600px;"> </p>
 <p align="center">A typed language for numerical quantities.</p>
 
 # Overview

@@ -40,7 +40,7 @@ V: kg*m^2*s^-3*A^-1
 ```
 
 > [!important]
-> The fundamental unit semantics (kg, m, s, A, etc.) is defined by the runtime environment.
+> The fundamental unit semantics `(kg, m, s, A, etc.)` is defined by the runtime environment.
 
 ### .uiv
 

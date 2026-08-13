@@ -1,0 +1,23 @@
+{
+  "iconDefinitions": {
+    "myCustomIcon": {
+      "iconPath": "./icon.svg"
+    }
+  },
+  "fileExtensions": {
+    "ut": "myCustomIcon",
+    "uiv": "myCustomIcon"
+  },
+  "light": {
+    "fileExtensions": {
+      "ut": "myCustomIcon",
+      "uiv": "myCustomIcon"
+    }
+  },
+  "highContrast": {
+    "fileExtensions": {
+      "ut": "myCustomIcon",
+      "uiv": "myCustomIcon"
+    }
+  }
+}

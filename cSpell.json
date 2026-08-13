@@ -2,15 +2,36 @@
   "version": "0.2",
   "language": "en-US",
   "ignorePaths": [
-    "**/*.{asc,lib,asy}"
+    "**/*.{asc,lib,asy,gitignore}"
   ],
   "words": [
     "Bowley",
-    "Picounits",
+    "breaklines",
+    "codegreen",
+    "codepurple",
+    "darkgray",
+    "escapeinside",
+    "fileicons",
+    "floatplacement",
+    "fullflexible",
+    "Ironless",
+    "keepspaces",
+    "keywordstyle",
+    "milli",
+    "morecomment",
+    "morestring",
+    "numbersep",
+    "numberstyle",
+    "PicoUnits",
+    "rulecolor",
+    "showstringspaces",
+    "stepnumber",
+    "stringstyle",
+    "tabsize",
+    "unitvalues",
+    "upquote",
     "wgbowley",
-    "coercivity",
-    "matweb",
-    "femm",
-    "coilgun"
+    "xleftmargin",
+    "xrightmargin"
   ]
 }

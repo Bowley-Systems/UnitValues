@@ -1,24 +1,30 @@
 {
-  "name": "uiv",
+  "name": "UnitValues",
   "publisher": "wgbowley",
-  "displayName": "UIV / UT",
-  "description": "Unit Informed Values and Unit Types syntax highlighting",
-  "version": "0.0.6",
-  "engines": { "vscode": "^1.80.0" },
-  "categories": ["Programming Languages"],
+  "displayName": "UnitValues",
+  "description": "UnitValues Syntax Highlighting",
+  "version": "0.0.1",
+  "icon": "./media/icon.png",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+
+  "categories": [
+    "Programming Languages"
+  ],
   "contributes": {
     "languages": [
       {
         "id": "ut",
         "aliases": ["Unit Types", "UT"],
         "extensions": [".ut"],
-        "configuration": "./format/language-configuration.json"
+        "configuration": "./config/ut-configuration.json"
       },
       {
         "id": "uiv",
         "aliases": ["Unit Informed Values", "UIV"],
         "extensions": [".uiv"],
-        "configuration": "./format/language-configuration.json"
+        "configuration": "./config/uiv-configuration.json"
       }
     ],
     "grammars": [
@@ -32,6 +38,19 @@
         "scopeName": "source.uiv",
         "path": "./syntaxes/uiv.tmLanguage.json"
       }
+    ],
+
+    "iconThemes": [
+      {
+        "id": "unitvalues",
+        "label": "UnitValues",
+        "path": "./icons/icon-theme.json"
+      }
     ]
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bowley-Systems/UnitValues"
   }
 }

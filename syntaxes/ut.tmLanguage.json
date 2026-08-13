@@ -1,4 +1,5 @@
 {
+  "name": "Unit Types",
   "scopeName": "source.ut",
   "patterns": [
     { "include": "#comment" },
@@ -38,7 +39,7 @@
       "patterns": [
         { "name": "keyword.operator.arithmetic.ut", "match": "[*^]" },
         { "name": "constant.numeric.exponent.ut", "match": "\\-[0-9]+" },
-        { "name": "constant.numeric.ut", "match": "\\b[0-9]+\b" },
+        { "name": "constant.numeric.ut", "match": "\\b[0-9]+\\b" },
         { "name": "support.type.primitive.ut", "match": "\\b[A-Za-zΑ-Ωα-ω]+\\b" }
       ]
     }

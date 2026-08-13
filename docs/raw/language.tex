@@ -1,0 +1,451 @@
+\documentclass[11pt]{article}
+
+% ------------------------------------------------------------
+% Packages
+% ------------------------------------------------------------
+\usepackage{lmodern}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage{titling}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{booktabs}
+\usepackage{textcomp}
+\usepackage{upquote}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage{microtype}
+\usepackage{fancyhdr}
+\usepackage{array}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{textgreek}
+\usepackage{needspace}
+
+% ------------------------------------------------------------
+% Color palette
+% ------------------------------------------------------------
+\definecolor{orange}{RGB}{251,133,0}
+\definecolor{cerulean}{RGB}{33,158,188}
+\definecolor{darkgray}{RGB}{80,80,80}
+\definecolor{lightgray}{RGB}{240,240,240}
+\definecolor{codegreen}{RGB}{0,128,0}
+\definecolor{codeblue}{RGB}{0,0,200}
+\definecolor{codepurple}{RGB}{128,0,128}
+\definecolor{codebrown}{RGB}{139,69,19}
+
+% ------------------------------------------------------------
+% General formatting
+% ------------------------------------------------------------
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em}
+\setlength{\emergencystretch}{3em}
+
+% Allow page breaks within paragraphs
+\raggedbottom
+
+\setlist[itemize]{
+  topsep=0.25em,
+  itemsep=0.15em,
+  parsep=0em
+}
+
+% ------------------------------------------------------------
+% Code style
+% ------------------------------------------------------------
+\lstset{
+  basicstyle=\ttfamily\small,
+  backgroundcolor=\color{lightgray},
+  frame=single,
+  rulecolor=\color{darkgray},
+  breaklines=true,
+  columns=fullflexible,
+  keepspaces=true,
+  showstringspaces=false,
+  tabsize=2,
+  upquote=true,
+  xleftmargin=0.5em,
+  xrightmargin=0.5em,
+  floatplacement=!htb,
+  escapeinside={(*@}{@*)},
+  literate=
+    {ρ}{{$\rho$}}1
+    {∅}{{$\varnothing$}}1,
+  commentstyle=\color{codegreen}\itshape,
+  stringstyle=\color{orange},
+  keywordstyle=\color{cerulean}\bfseries,
+  numberstyle=\tiny\color{darkgray},
+  stepnumber=1,
+  numbersep=5pt,
+}
+
+% ------------------------------------------------------------
+% Custom language definitions
+% ------------------------------------------------------------
+\lstdefinelanguage{UnitValuesUT}{
+  morekeywords={
+    version, format, units
+  },
+  keywordstyle=\color{cerulean}\bfseries,
+  morecomment=[l]{\#},
+  commentstyle=\color{codegreen}\itshape,
+  morestring=[b]",
+  stringstyle=\color{orange},
+  sensitive=true,
+}
+
+\lstdefinelanguage{UnitValuesUIV}{
+  morekeywords={
+    version, format, unit_frame
+  },
+  keywordstyle=\color{cerulean}\bfseries,
+  morekeywords=[2]{
+    num_samples, sample_size, output_energy, output_signal, inlet_pressure,
+    relative_permittivity, temperature, temperature_conductivity, my_spring,
+    density, V, ρ
+  },
+  keywordstyle=[2]\color{codepurple},
+  morecomment=[l]{\#},
+  commentstyle=\color{codegreen}\itshape,
+  morestring=[b]",
+  stringstyle=\color{orange},
+  sensitive=true,
+}
+
+% ------------------------------------------------------------
+% Header / footer
+% ------------------------------------------------------------
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{darkgray}{UnitValues}}
+\fancyhead[R]{\textcolor{darkgray}{Language Specification}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+\setlength{\headheight}{14pt}
+
+% ------------------------------------------------------------
+% Title page
+% ------------------------------------------------------------
+\pretitle{%
+  \begin{center}
+    \vspace*{2cm}
+
+    \includegraphics[width=10cm]{../../media/logo.png}
+
+    \vspace{1.5cm}
+
+    {\Huge\bfseries Language Specification\par}
+
+    \vspace{0.4cm}
+
+    {\Large\textcolor{darkgray}{Version 1.0.0}\par}
+
+    \vspace{0.25cm}
+
+    {\large\textcolor{darkgray}{August 14, 2026}\par}
+
+    \vfill
+  \end{center}
+}
+
+\posttitle{}
+\title{}
+\author{}
+\date{}
+
+% ------------------------------------------------------------
+% Document
+% ------------------------------------------------------------
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+% ============================================================
+\section{Introduction}
+% ============================================================
+
+\subsection{Purpose}
+
+UnitValues is a set of domain-specific typed languages for numerical
+quantities. The set consists of two languages:
+
+\begin{itemize}
+  \item \texttt{.ut} (unit types) for defining units from fundamental dimensions.
+  \item \texttt{.uiv} (unit informed values) which import unit types and use
+        dimensional construction to encode numerical quantities.
+\end{itemize}
+
+\subsection{Scope}
+
+This document defines the syntax, semantics, and usage of all constructs
+in the \texttt{.ut} and \texttt{.uiv} domain-specific languages.
+
+% ============================================================
+\section{Language Rules}
+% ============================================================
+
+\needspace{3\baselineskip}
+\subsection{Global Section}
+
+The \texttt{[version]} section is required and defines the format version:
+
+\needspace{5\baselineskip}
+\begin{lstlisting}[language=UnitValuesUT]
+[version]
+format: 0.1.0
+\end{lstlisting}
+
+\needspace{3\baselineskip}
+\subsection{Unit Frame}
+
+The \texttt{unit\_frame} directive specifies which \texttt{.ut} file to
+import for unit definitions:
+
+\needspace{5\baselineskip}
+\begin{lstlisting}[language=UnitValuesUIV]
+unit_frame: si_metric.ut
+\end{lstlisting}
+
+\needspace{3\baselineskip}
+\subsection{Sections}
+
+Sections are denoted by \texttt{[section.name]} and can be nested.
+Common section types include:
+
+\begin{itemize}
+  \item \texttt{[standards]} --- Defines standard values used across the file.
+  \item \texttt{[material.meta]} --- Metadata about a material
+        (type, composition, notes).
+  \item \texttt{[motor.magnetic]} --- Magnetic properties
+        (permeability, hysteresis).
+  \item \texttt{[armature.core.slots]} --- Armature slot properties
+        (length, material).
+\end{itemize}
+
+\newpage
+
+\needspace{3\baselineskip}
+\subsection{Value Assignments}
+
+Values are assigned using the format:
+
+\needspace{5\baselineskip}
+\begin{lstlisting}[language=UnitValuesUIV]
+key: value prefix(unit)
+\end{lstlisting}
+
+Examples:
+
+\begin{itemize}
+  \item \texttt{density: 8930 (kg/m\string^3)}
+  \item \texttt{temperature: 298.15 (K)}
+\end{itemize}
+
+\needspace{3\baselineskip}
+\subsection{Numeric Values}
+
+UnitValues supports real and complex numerical values. Complex values may
+be represented using the standard imaginary unit \texttt{j}:
+
+\needspace{5\baselineskip}
+\begin{lstlisting}[language=UnitValuesUIV]
+real_value: 12.5 (V)
+complex_value: 12.5+3.2j (V)
+\end{lstlisting}
+
+
+\needspace{3\baselineskip}
+\subsection{Unit Prefixes}
+
+SI prefixes can be applied to units:
+
+\begin{itemize}
+  \item \texttt{(kg/mol)} --- kilogram per mole.
+  \item \texttt{M(A/m)} --- mega-amp per meter.
+  \item \texttt{m(m)} --- millimeter (i.e., 1/1000 of a meter).
+  \item \texttt{m(m\string^2)} --- milli-square-meter
+        (i.e., 1/1000 of a square meter).
+\end{itemize}
+
+\begin{quote}
+  \textbf{Note:} 
+  
+  Prefixes apply to the unit expression as a whole and do not
+  distribute through its internal algebra. For example,
+  \texttt{m(m\string^2)} represents $10^{-3}\,\mathrm{m^2}$, not
+  $10^{-6}\,\mathrm{m^2}$.
+\end{quote}
+
+\needspace{3\baselineskip}
+\subsection{Arrays and Tuples}
+
+Arrays are denoted with square brackets:
+
+\needspace{5\baselineskip}
+\begin{lstlisting}[language=UnitValuesUIV]
+relative_permittivity: [1, 1]
+\end{lstlisting}
+
+Tuples (key-value pairs) use nested arrays:
+
+\needspace{5\baselineskip}
+\begin{lstlisting}[language=UnitValuesUIV]
+temperature_conductivity: [
+  [273.0, 401.0],
+  [473.0, 389.0]
+] (K), (k)
+\end{lstlisting}
+
+\begin{quote}
+  \textbf{Note:}
+
+  Nested arrays may represent column-wise data. When multiple unit
+  expressions follow an array, each unit is assigned to the corresponding
+  column. Thus, \texttt{(K), (k)} assigns kelvin to the first column and
+  the derived unit \texttt{k} to the second column. The unit \texttt{k}
+  is defined in the active unit frame.
+\end{quote}
+
+\newpage
+\needspace{3\baselineskip}
+\subsection{Strings and Comments}
+
+Strings can be used as values:
+
+\needspace{5\baselineskip}
+\begin{lstlisting}[language=UnitValuesUIV]
+my_spring: "Reduced Order Model | Tubular Ironless Linear Motor"
+\end{lstlisting}
+
+Comments begin with \texttt{\#} and extend to the end of the line. Comments
+may appear on their own line or after a value:
+
+\needspace{6\baselineskip}
+\begin{lstlisting}[language=UnitValuesUIV]
+# This is a comment
+temperature: 298.15 (K)  # Operating temperature
+\end{lstlisting}
+
+\needspace{3\baselineskip}
+\subsection{Unit Construction}
+
+Units are constructed from fundamental dimensions using the following
+operators:
+
+\begin{table}[H]
+  \centering
+  \renewcommand{\arraystretch}{1.25}
+  \begin{tabular}{>{\raggedright\arraybackslash}p{3.0cm}
+                  >{\raggedright\arraybackslash}p{4.0cm}
+                  >{\raggedright\arraybackslash}p{7.0cm}}
+    \toprule
+    \textbf{Operation} & \textbf{Symbols} & \textbf{Description} \\
+    \midrule
+    Multiplication
+      & \texttt{*}, \texttt{x}, $\cdot$, $\bullet$
+      & Multiplies units together \\
+
+    Division
+      & \texttt{/}, $\div$
+      & Divides units \\
+
+    Power
+      & \texttt{\string^}
+      & Raises a unit to a power \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Examples:
+
+\needspace{5\baselineskip}
+\begin{lstlisting}[language=UnitValuesUT]
+kg*m^2*s^-3*A^-1
+m/s^2
+kg*m/s^2
+\end{lstlisting}
+
+% ============================================================
+\section{Examples}
+% ============================================================
+
+\needspace{5\baselineskip}
+\subsection{.ut File Example}
+
+The following example demonstrates how to define custom units derived from
+fundamental dimensions in a \texttt{.ut} file:
+
+\begin{lstlisting}[language=UnitValuesUT]
+# Example Units - Derived from Fundamental Dimensions (kg, m, s, A, etc.)
+[version]
+format: 0.1.0
+ 
+[units]
+# name: unit
+ρ: kg/m^3                 # Defines the unit for pressure
+V: kg*m^2*s^-3*A^-1       # Defines the unit for voltage
+\end{lstlisting}
+
+\begin{quote}
+  \textbf{Note:}
+
+  The fundamental unit and prefix semantics \texttt{(kg, m, s, A, etc.)}
+  \& \texttt{(u, m, k, M, etc.)} is defined by the runtime environment.
+\end{quote}
+
+\newpage
+\needspace{5\baselineskip}
+\subsection{.uiv File Example}
+
+The following example demonstrates how to use unit definitions from a
+\texttt{.ut} file and assign typed values in a \texttt{.uiv} file:
+
+\begin{lstlisting}[language=UnitValuesUIV, escapeinside={(*@}{@*)}]
+[version]
+format: 0.1.0
+unit_frame: units.ut
+
+[model]
+# name: value prefix(unit)
+num_samples: 100                        # Implicitly dimensionless
+sample_size: 10         ((*@$\varnothing$@*))             # Explicitly dimensionless
+output_energy: 1.0      (kg*m^2*s^-2)   # Defines unit via construction
+output_signal: 5.0      (V)             # Defined unit `V` for voltage
+inlet_pressure: 101     k((*@$\rho$@*))            # Defined unit `(*@$\rho$@*)` for pressure with kilo prefix
+\end{lstlisting}
+
+% ============================================================
+\section{Error Reference}
+% ============================================================
+
+\subsection{Errors}
+
+\begin{enumerate}
+  \item \textbf{E001} --- ParserError: Generic parser error when parsing fails.
+  \item \textbf{E002} --- ParseListFailure: Failed to parse a list or array structure.
+  \item \textbf{E003} --- UnknownOperator: Unsupported operator used in unit construction.
+  \item \textbf{E004} --- UnknownPrefix: Invalid prefix used.
+  \item \textbf{E005} --- FailedCasting: Failed to cast value to language primitive type.
+  \item \textbf{E006} --- ColumnAttribute: Nested array column index out of range.
+  \item \textbf{E007} --- UnsupportedType: Unsupported type during unit construction.
+  \item \textbf{E008} --- UnbalancedDepth: Unbalanced parentheses, brackets, or braces.
+  \item \textbf{E009} --- InvalidSectionError: Malformed section header.
+  \item \textbf{E010} --- DuplicateSectionError: Duplicate section in file.
+  \item \textbf{E012} --- InvalidKeyError: Malformed key-value pair.
+  \item \textbf{E014} --- InvalidUnitError: Invalid or malformed unit definition.
+  \item \textbf{E015} --- UnitNotFoundError: Referenced unit doesn't exist.
+\end{enumerate}
+
+\subsection{Warnings}
+
+\begin{enumerate}
+  \item \textbf{W001} --- BackCompatibilityWarning: Missing 'format' key in version section.
+  \item \textbf{W002} --- UnitFrameCompatibilityWarning: Missing 'unit\_frame' key in version section.
+\end{enumerate}
+
+
+\end{document}

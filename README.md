@@ -74,6 +74,24 @@ You can try the language today by installing PicoUnits:
 pip install PicoUnits
 ```
 
+## Local Installation
+
+To install the UnitValues extension locally for Visual Studio Code:
+
+### Windows
+
+```powershell
+npx @vscode/vsce package
+code --install-extension .\UnitValues-0.0.1.vsix --force
+```
+
+### MacOS/Linux
+
+```bash
+npx @vscode/vsce package
+code --install-extension ./uiv-0.0.1.vsix --force
+```
+
 ## Documentation
 
 All internal documentation can be found within this repo's [issues](https://github.com/Bowley-Systems/UnitValues/issues).

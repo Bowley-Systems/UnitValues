@@ -1,19 +1,28 @@
 \documentclass{article}
 \usepackage{graphicx}
 \usepackage{titling}
+\usepackage{xcolor}
 
-\pretitle{\begin{center}
-  \vspace*{\fill}
-  
-  \includegraphics[width=10cm]{../../logos/logo.png}\\[0.8cm]
-  
-  {\Huge \textbf{Language Specification}}\\[0.8cm]
-  
-  {\Large Bowley Systems}\\[0.2cm]
-  
-  {\large August 13, 2026}
-  
-  \vfill
+\definecolor{accent}{RGB}{0, 0, 0}
+\definecolor{darkgray}{RGB}{80, 80, 80}
+
+\pretitle{%
+  \begin{center}
+    \vspace*{\fill}
+    
+    \includegraphics[width=10cm]{../../logos/logo.png}\\[1.2cm]
+    
+    {\Huge \textbf{Language Specification}}\\[0.2cm]
+    
+    {\large \textcolor{darkgray}{Version 1.0.0}}\\[0.2cm]
+    
+    {\large \textcolor{darkgray}{August 13, 2026}}\\[0.8cm]
+    
+    \textcolor{accent}{\rule{0.3\textwidth}{1pt}}\\[0.6cm]
+    
+    {\Large \textsc{Bowley Systems}}
+    
+    \vspace*{\fill}
   \end{center}
 }
 \posttitle{}
@@ -24,4 +33,6 @@
 
 \begin{document}
 \maketitle
+\newpage
+% Rest of document...
 \end{document}

@@ -8,7 +8,7 @@ I defined it well enough and added appropriate syntax highlighting.
 Nevertheless, I think it's a very good domain-specific language. 
 
 Hope you think the same,
-— William Bowley, 13th of August, 2026
+— William Bowley, 14th of August, 2026
 
 P.S: Thanks for downloading the UnitValues repository `▽`ʃ♡
 -->

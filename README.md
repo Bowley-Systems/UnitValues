@@ -15,7 +15,7 @@ P.S: Thanks for downloading the UnitValues repository `▽`ʃ♡
 
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Bowley-Systems/UnitValues/refs/heads/main/logos/logo.png" alt="UnitValues" style="max-width:600px;">
+  <img src="https://raw.githubusercontent.com/Bowley-Systems/UnitValues/refs/heads/main/media/logo.png" alt="UnitValues" style="max-width:600px;">
 </p>
 <p align="center">A typed language for numerical quantities.</p>
 

@@ -26,6 +26,9 @@ UnitValues is a set of domain-specific typed languages for numerical quantities.
 - Unit Types (`.ut`) for defining units from fundamental dimensions.
 - Unit Informed Values (`.uiv`) import Unit Types and uses dimensional construction to encode numerical quantities.
 
+> [!important]
+> Language specification for `.ut` and `.uiv` can be found within [docs/language.pdf](./docs/language.pdf)
+
 ## Example
 
 ### .ut
@@ -60,9 +63,6 @@ inlet_pressure: 101     k(ρ)            # Defined unit `ρ` for pressure with k
 ```
 
 ## Documentation
-
-> [!important]
-> Format specification for `.ut` and `.uiv` can be found within [documentation](/docs/)
 
 All internal documentation can be found within this repo's [issues](https://github.com/Bowley-Systems/UnitValues/issues).
 

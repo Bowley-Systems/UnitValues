@@ -17,4 +17,3 @@ My personal VS Code workflow also includes:
 - `LaTeX Workshop`
 - `LaTeX`
 - `CSpell Code Spell Checker` & `CSpell Bundled Dictionaries`
-- [UIV Language](https://github.com/wgbowley/uiv-language) package (supports `.ut` and `.uiv` formats)

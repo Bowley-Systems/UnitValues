@@ -42,12 +42,12 @@ format: 0.1.0
  
 [units]
 # name: unit
-ρ: kg/m^3
-V: kg*m^2*s^-3*A^-1
+ρ: kg/m^3                             # Defines the unit for pressure
+V: kg*m^2*s^-3*A^-1                   # Defines the unit for voltage
 ```
 
 > [!NOTE]
-> The fundamental unit semantics `(kg, m, s, A, etc.)` is defined by the runtime environment.
+> The fundamental unit semantics and prefixes `(kg, m, s, A, etc.)` & `(u, m, k, M, etc.)` is defined by the runtime environment.
 
 ### .uiv
 
@@ -63,6 +63,15 @@ sample_size: 10         (∅)             # Explicitly dimensionless
 output_energy: 1.0      (kg*m^2*s^-2)   # Defines unit via construction
 output_signal: 5.0      (V)             # Defined unit `V` for voltage
 inlet_pressure: 101     k(ρ)            # Defined unit `ρ` for pressure with kilo prefix
+```
+
+## Implementation
+
+UnitValues is implemented by [PicoUnits](https://github.com/Bowley-Systems/PicoUnits).  
+You can try the language today by installing PicoUnits:
+
+```bash
+pip install PicoUnits
 ```
 
 ## Documentation

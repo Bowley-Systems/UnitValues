@@ -2,10 +2,11 @@
 \usepackage{graphicx}
 \usepackage{titling}
 \usepackage{xcolor}
+\usepackage{enumitem}
 
 \definecolor{darkgray}{RGB}{80, 80, 80}
 
-\pretitle{%
+\pretitle{
   \begin{center}
     \vspace*{\fill}
     
@@ -20,14 +21,27 @@
     \vspace*{\fill}
   \end{center}
 }
-\posttitle{}
 
+\posttitle{}
 \title{}
 \author{}
 \date{}
 
 \begin{document}
+
 \maketitle
 \newpage
-% Rest of document...
+
+\section{Introduction}
+
+\subsection{Purpose}
+UnitValues is a set of domain-specific typed languages for numerical quantities. The set consists of two languages:
+\begin{itemize}
+  \item \texttt{.ut} (unit types) for defining units from fundamental dimensions
+  \item \texttt{.uiv} (unit informed values) which import unit types and use dimensional construction to encode numerical quantities
+\end{itemize}
+
+\subsection{Scope}
+This document defines the syntax, semantics, and usage of all constructs in the \texttt{.ut} and \texttt{.uiv} domain-specific languages.
+
 \end{document}

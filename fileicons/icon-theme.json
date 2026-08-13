@@ -1,0 +1,11 @@
+{
+  "iconDefinitions": {
+    "uiv": {
+      "iconPath": "../logos/icon.svg"
+    }
+  },
+  "fileExtensions": {
+    "ut": "uiv",
+    "uiv": "uiv"
+  }
+}

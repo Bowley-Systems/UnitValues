@@ -140,11 +140,11 @@
 
     \vspace{0.4cm}
 
-    {\Large\textcolor{darkgray}{Version 1.0.1}\par}
+    {\Large\textcolor{darkgray}{Version 0.1.1}\par}
 
     \vspace{0.25cm}
 
-    {\large\textcolor{darkgray}{August 14, 2026}\par}
+    {\large\textcolor{darkgray}{August 21, 2026}\par}
 
     \vfill
   \end{center}
@@ -196,7 +196,7 @@ The \texttt{[version]} section is required and defines the format version:
 \needspace{5\baselineskip}
 \begin{lstlisting}[language=UnitValuesUT]
 [version]
-format: 0.1.0
+format: 0.1.1
 \end{lstlisting}
 
 \needspace{3\baselineskip}
@@ -382,11 +382,11 @@ fundamental dimensions in a \texttt{.ut} file:
 \begin{lstlisting}[language=UnitValuesUT]
 # Example Units - Derived from Fundamental Dimensions (kg, m, s, A, etc.)
 [version]
-format: 0.1.0
+format: 0.1.1
  
 [units]
 # name: unit
-ρ: kg/m^3                 # Defines the unit for pressure
+p: kg*m^-1*s^-2           # Defines the unit for pressure (Pascal)
 V: kg*m^2*s^-3*A^-1       # Defines the unit for voltage
 \end{lstlisting}
 
@@ -406,7 +406,7 @@ The following example demonstrates how to use unit definitions from a
 
 \begin{lstlisting}[language=UnitValuesUIV, escapeinside={(*@}{@*)}]
 [version]
-format: 0.1.0
+format: 0.1.1
 unit_frame: units.ut
 
 [model]
@@ -415,7 +415,7 @@ num_samples: 100                        # Implicitly dimensionless
 sample_size: 10         ((*@$\varnothing$@*))             # Explicitly dimensionless
 output_energy: 1.0      (kg*m^2*s^-2)   # Defines unit via construction
 output_signal: 5.0      (V)             # Defined unit `V` for voltage
-inlet_pressure: 101     k((*@$\rho$@*))            # Defined unit `(*@$\rho$@*)` for pressure with kilo prefix
+inlet_pressure: 101     k(p)            # Defined unit with kilo prefix
 \end{lstlisting}
 
 % ============================================================
@@ -429,13 +429,13 @@ inlet_pressure: 101     k((*@$\rho$@*))            # Defined unit `(*@$\rho$@*)`
   
   \item \textbf{E002} --- ParseListFailure: Failed to parse a list or array structure. This occurs when a list definition (e.g., \texttt{[1, 2, 3]} or \texttt{(1, 2)}) is malformed or contains invalid elements that cannot be parsed correctly.
   
-  \item \textbf{E003} --- UnknownOperator: Unsupported or unrecognized operator used in unit construction. Valid operators include \texttt{*}, \texttt{/}, \texttt{\^}, and parentheses for grouping.
+  \item \textbf{E003} --- UnknownOperator: Unsupported or unrecognized operator used in unit construction. Valid operators include \texttt{*}, \texttt{/}, \texttt{\^}, etc.
   
-  \item \textbf{E004} --- UnknownPrefix: Invalid or unrecognized prefix used in unit definitions. Valid prefixes include standard prefixes like \texttt{k}, \texttt{M}, \texttt{m}, \texttt{\textmu}, \texttt{n}, etc.
+  \item \textbf{E004} --- UnknownPrefix: Invalid or unrecognized prefix used in unit definitions. Valid prefixes include standard SI prefixes like \texttt{k}, \texttt{M}, \texttt{m}, \texttt{\textmu}, \texttt{n}, etc.
   
   \item \textbf{E005} --- FailedCasting: Failed to cast a value to a primitive type (e.g., converting a string to float or integer). This typically occurs when a value has an unexpected format that cannot be converted.
   
-  \item \textbf{E006} --- ColumnAttribute: Nested array column index is out of range. Occurs when trying to access a column that doesn't exist in a multi-dimensional array structure during attribute construction.
+  \item \textbf{E006} --- ColumnAttribute: Nested array column index is out of range. Occurs when trying to access a column that doesn't exist in a nested array structure during attribute construction.
   
   \item \textbf{E007} --- UnsupportedType: Unsupported type encountered during unit construction. This occurs when a unit or dimensional cannot be converted to a valid unit type because the type is not supported.
   
@@ -447,7 +447,7 @@ inlet_pressure: 101     k((*@$\rho$@*))            # Defined unit `(*@$\rho$@*)`
   
   \item \textbf{E011} --- InvalidKeyError: Malformed key-value pair. Occurs when a line in a section doesn't follow the key: value format or the key name is not a valid Python attribute name.
   
-  \item \textbf{E012} --- UnitNotFoundError: Referenced unit doesn't exist in the current unit system. Occurs when trying to use a unit that hasn't been defined in the available units list.
+  \item \textbf{E012} --- UnitNotFoundError: Unit doesn't exist in the current unit frame. Occurs when trying to use a unit that hasn't been defined in the available units list.
 \end{enumerate}
 
 \subsection{Warnings}

@@ -94,14 +94,14 @@ To install the UnitValues extension manually for Visual Studio Code:
 
 ```powershell
 npx @vscode/vsce package
-code --install-extension .\UnitValues-0.0.1.vsix --force
+code --install-extension .\UnitValues-0.0.3.vsix --force
 ```
 
 ### MacOS/Linux
 
 ```bash
 npx @vscode/vsce package
-code --install-extension ./uiv-0.0.1.vsix --force
+code --install-extension ./uiv-0.0.3.vsix --force
 ```
 
 ### Documentation

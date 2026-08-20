@@ -30,11 +30,10 @@ P.S: Thanks for downloading the UnitValues repository `▽`ʃ♡
 ![License](https://img.shields.io/badge/License-MIT-219ebc?style=flat-square)
 
 
-UnitValues is a set of domain-specific typed languages for numerical quantities. <br>
+UnitValues defines two domain-specific typed languages for numerical quantities: <br>
 
-The set consists of two languages:
 - Unit Types (`.ut`) for defining units from fundamental dimensions.
-- Unit Informed Values (`.uiv`) import Unit Types and uses dimensional construction to encode numerical quantities.
+- Unit Informed Values (`.uiv`) imports `Unit Types` and uses dimensional construction to encode numerical quantities.
 
 > [!IMPORTANT]
 >

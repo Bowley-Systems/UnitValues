@@ -26,7 +26,7 @@ P.S: Thanks for downloading the UnitValues repository `▽`ʃ♡
 
 # Overview
 ![Status](https://img.shields.io/badge/Status-Active-219EBC?style=flat-square)
-![DSL](https://img.shields.io/badge/Domain-DSL-ffb703?style=flat-square&labelColor)
+![DSL](https://img.shields.io/badge/Domain-DSL-ffb703?style=flat-square)
 ![License](https://img.shields.io/badge/License-MIT-219ebc?style=flat-square)
 
 

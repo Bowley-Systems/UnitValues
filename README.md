@@ -25,10 +25,10 @@ P.S: Thanks for downloading the UnitValues repository `▽`ʃ♡
 </p>  
 
 # Overview
- 
-![License](https://img.shields.io/badge/License-MIT-219ebc?style=flat-square)
-![DSL](https://img.shields.io/badge/Domain-DSL-ffb703?style=flat-square&labelColor)
 ![Status](https://img.shields.io/badge/Status-Active-219EBC?style=flat-square)
+![DSL](https://img.shields.io/badge/Domain-DSL-ffb703?style=flat-square&labelColor)
+![License](https://img.shields.io/badge/License-MIT-219ebc?style=flat-square)
+
 
 UnitValues is a set of domain-specific typed languages for numerical quantities. The set consists of two languages:
 - Unit Types (`.ut`) for defining units from fundamental dimensions.

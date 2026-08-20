@@ -15,9 +15,14 @@ P.S: Thanks for downloading the UnitValues repository `▽`ʃ♡
 
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Bowley-Systems/UnitValues/refs/heads/main/media/logo.png" alt="UnitValues" style="max-width:600px;">
+  <img src="https://raw.githubusercontent.com/Bowley-Systems/UnitValues/refs/heads/main/media/logo.png" alt="UnitValues" style="width:100%; max-width:100%; display:block;">
 </p>
-<p align="center">A typed language for numerical quantities.</p>
+<h4 align="center">A typed language for numerical quantities.</h4>
+
+<p align="center">
+    Define the type. Define the quality. <br>
+    Make numerical meaning explicit before computation begins.
+</p>  
 
 # Overview
  

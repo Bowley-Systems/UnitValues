@@ -104,7 +104,7 @@ npx @vscode/vsce package
 code --install-extension ./uiv-0.0.1.vsix --force
 ```
 
-## Documentation
+### Documentation
 
 All internal documentation can be found within this repo's [issues](https://github.com/Bowley-Systems/UnitValues/issues).
 

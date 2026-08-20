@@ -47,7 +47,7 @@ format: 0.1.0
  
 [units]
 # name: unit
-ρ: kg/m^3                             # Defines the unit for pressure
+p: kg*m^-1*s^-2                       # Defines the unit for pressure (Pascal)
 V: kg*m^2*s^-3*A^-1                   # Defines the unit for voltage
 ```
 
@@ -67,7 +67,7 @@ num_samples: 100                        # Implicitly dimensionless
 sample_size: 10         (∅)             # Explicitly dimensionless
 output_energy: 1.0      (kg*m^2*s^-2)   # Defines unit via construction
 output_signal: 5.0      (V)             # Defined unit `V` for voltage
-inlet_pressure: 101     k(ρ)            # Defined unit `ρ` for pressure with kilo prefix
+inlet_pressure: 101     k(p)            # Defined unit `p` for pressure with kilo prefix
 ```
 
 ## Implementation

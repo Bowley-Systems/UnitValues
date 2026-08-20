@@ -35,9 +35,16 @@ UnitValues defines two domain-specific typed languages for numerical quantities:
 - Unit Types (`.ut`) for defining units from fundamental dimensions.
 - Unit Informed Values (`.uiv`) imports `Unit Types` and uses dimensional construction to encode numerical quantities.
 
-> [!IMPORTANT]
->
-> Language specification for `.ut` and `.uiv` can be found within [docs/language.pdf](./docs/language.pdf)
+Language specification for `.ut` and `.uiv` can be found within [docs/language.pdf](./docs/language.pdf)
+
+### Implementation
+
+UnitValues is implemented by [PicoUnits](https://github.com/Bowley-Systems/PicoUnits).  
+You can try the language today by installing PicoUnits:
+
+```bash
+pip install PicoUnits
+```
 
 ## Example
 
@@ -71,15 +78,6 @@ sample_size: 10         (∅)             # Explicitly dimensionless
 output_energy: 1.0      (kg*m^2*s^-2)   # Defines unit via construction
 output_signal: 5.0      (V)             # Defined unit `V` for voltage
 inlet_pressure: 101     k(p)            # Defined unit `p` for pressure with kilo prefix
-```
-
-## Implementation
-
-UnitValues is implemented by [PicoUnits](https://github.com/Bowley-Systems/PicoUnits).  
-You can try the language today by installing PicoUnits:
-
-```bash
-pip install PicoUnits
 ```
 
 ## Local Installation

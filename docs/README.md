@@ -1,6 +1,7 @@
 # Documentation
 
 > [!important]
+>
 > The format specification for `.ut` and `.uiv` can be found here: [language.pdf](./language.pdf)
 
 ## Contributors
@@ -11,6 +12,7 @@ UnitValues is developed using:
 - `LaTeX` for the language specification document
 
 > [!note]
+>
 > Ensure that you add words to `CSpell`'s `cSpell.json`, not your personal dictionary.
 
 My personal VS Code workflow also includes:

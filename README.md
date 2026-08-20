@@ -30,11 +30,14 @@ P.S: Thanks for downloading the UnitValues repository `▽`ʃ♡
 ![License](https://img.shields.io/badge/License-MIT-219ebc?style=flat-square)
 
 
-UnitValues is a set of domain-specific typed languages for numerical quantities. The set consists of two languages:
+UnitValues is a set of domain-specific typed languages for numerical quantities. <br>
+
+The set consists of two languages:
 - Unit Types (`.ut`) for defining units from fundamental dimensions.
 - Unit Informed Values (`.uiv`) import Unit Types and uses dimensional construction to encode numerical quantities.
 
 > [!IMPORTANT]
+>
 > Language specification for `.ut` and `.uiv` can be found within [docs/language.pdf](./docs/language.pdf)
 
 ## Example
@@ -52,6 +55,7 @@ V: kg*m^2*s^-3*A^-1                   # Defines the unit for voltage
 ```
 
 > [!NOTE]
+>
 > The fundamental unit semantics and prefixes `(kg, m, s, A, etc.)` & `(u, m, k, M, etc.)` is defined by the runtime environment.
 
 ### .uiv
@@ -82,6 +86,12 @@ pip install PicoUnits
 ## Local Installation
 
 To install the UnitValues extension locally for Visual Studio Code:
+
+- **From the Marketplace**: [Install UnitValues directly from the VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=wgbowley.UnitValues)
+
+### Manual Installation
+
+To install the UnitValues extension manually for Visual Studio Code:
 
 ### Windows
 

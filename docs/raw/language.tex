@@ -140,7 +140,7 @@
 
     \vspace{0.4cm}
 
-    {\Large\textcolor{darkgray}{Version 1.0.0}\par}
+    {\Large\textcolor{darkgray}{Version 1.0.1}\par}
 
     \vspace{0.25cm}
 
@@ -425,27 +425,37 @@ inlet_pressure: 101     k((*@$\rho$@*))            # Defined unit `(*@$\rho$@*)`
 \subsection{Errors}
 
 \begin{enumerate}
-  \item \textbf{E001} --- ParserError: Generic parser error when parsing fails.
-  \item \textbf{E002} --- ParseListFailure: Failed to parse a list or array structure.
-  \item \textbf{E003} --- UnknownOperator: Unsupported operator used in unit construction.
-  \item \textbf{E004} --- UnknownPrefix: Invalid prefix used.
-  \item \textbf{E005} --- FailedCasting: Failed to cast value to language primitive type.
-  \item \textbf{E006} --- ColumnAttribute: Nested array column index out of range.
-  \item \textbf{E007} --- UnsupportedType: Unsupported type during unit construction.
-  \item \textbf{E008} --- UnbalancedDepth: Unbalanced parentheses, brackets, or braces.
-  \item \textbf{E009} --- InvalidSectionError: Malformed section header.
-  \item \textbf{E010} --- DuplicateSectionError: Duplicate section in file.
-  \item \textbf{E012} --- InvalidKeyError: Malformed key-value pair.
-  \item \textbf{E014} --- InvalidUnitError: Invalid or malformed unit definition.
-  \item \textbf{E015} --- UnitNotFoundError: Referenced unit doesn't exist.
+  \item \textbf{E001} --- ParserError: Generic parser error that occurs when parsing fails. This is a catch-all error for unexpected parsing failures. Raised when a parser encounters an unrecoverable error during parsing.
+  
+  \item \textbf{E002} --- ParseListFailure: Failed to parse a list or array structure. This occurs when a list definition (e.g., \texttt{[1, 2, 3]} or \texttt{(1, 2)}) is malformed or contains invalid elements that cannot be parsed correctly.
+  
+  \item \textbf{E003} --- UnknownOperator: Unsupported or unrecognized operator used in unit construction. Valid operators include \texttt{*}, \texttt{/}, \texttt{\^}, and parentheses for grouping.
+  
+  \item \textbf{E004} --- UnknownPrefix: Invalid or unrecognized prefix used in unit definitions. Valid prefixes include standard prefixes like \texttt{k}, \texttt{M}, \texttt{m}, \texttt{\textmu}, \texttt{n}, etc.
+  
+  \item \textbf{E005} --- FailedCasting: Failed to cast a value to a primitive type (e.g., converting a string to float or integer). This typically occurs when a value has an unexpected format that cannot be converted.
+  
+  \item \textbf{E006} --- ColumnAttribute: Nested array column index is out of range. Occurs when trying to access a column that doesn't exist in a multi-dimensional array structure during attribute construction.
+  
+  \item \textbf{E007} --- UnsupportedType: Unsupported type encountered during unit construction. This occurs when a unit or dimensional cannot be converted to a valid unit type because the type is not supported.
+  
+  \item \textbf{E008} --- UnbalancedDepth: Unbalanced parentheses, brackets, or braces in the input. Occurs when opening and closing delimiters don't match properly during parsing.
+  
+  \item \textbf{E009} --- InvalidSectionError: Malformed section header in the configuration file. Section headers should follow the pattern \texttt{[SectionName]} and each section name must be a valid Python attribute name.
+  
+  \item \textbf{E010} --- DuplicateSectionError: Duplicate section found in the file. Each section header must be unique within a configuration file to avoid ambiguity.
+  
+  \item \textbf{E011} --- InvalidKeyError: Malformed key-value pair. Occurs when a line in a section doesn't follow the key: value format or the key name is not a valid Python attribute name.
+  
+  \item \textbf{E012} --- UnitNotFoundError: Referenced unit doesn't exist in the current unit system. Occurs when trying to use a unit that hasn't been defined in the available units list.
 \end{enumerate}
 
 \subsection{Warnings}
 
 \begin{enumerate}
-  \item \textbf{W001} --- BackCompatibilityWarning: Missing 'format' key in version section.
-  \item \textbf{W002} --- UnitFrameCompatibilityWarning: Missing 'unit\_frame' key in version section.
+  \item \textbf{W001} --- BackCompatibilityWarning: Missing \texttt{format} key in the version section. The file format version is required for proper parsing and backward compatibility with different file versions.
+  
+  \item \textbf{W002} --- UnitFrameCompatibilityWarning: Missing \texttt{unit\_frame} key in the version section. The unit frame specification is needed for proper unit handling and compatibility with derived units.
 \end{enumerate}
-
 
 \end{document}

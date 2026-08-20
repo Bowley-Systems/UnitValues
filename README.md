@@ -1,7 +1,7 @@
 <!-- 
-Color palette: 
-#fb8500 -> vibrant, fiery orange 
-#219ebc -> cool, mid-tone cerulean blue 
+Color palette:
+#219EBC -> cool, mid-tone cerulean blue 
+#ffb703 -> warm, golden-amber yellow 
 
 Not much to say really. It's my first domain-specific language, hopefully 
 I defined it well enough and added appropriate syntax highlighting. 
@@ -15,7 +15,7 @@ P.S: Thanks for downloading the UnitValues repository `▽`ʃ♡
 
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Bowley-Systems/UnitValues/refs/heads/main/media/logo.png" alt="UnitValues" style="width:100%; max-width:100%; display:block;">
+  <img src="media/logo.png" alt="UnitValues" style="width:100%; max-width:100%; display:block;">
 </p>
 <h4 align="center">A typed language for numerical quantities.</h4>
 

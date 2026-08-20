@@ -425,7 +425,7 @@ inlet_pressure: 101     k(p)            # Defined unit with kilo prefix
 \begin{enumerate}
   \item \textbf{E001} --- ParserError: Generic parser error that occurs when parsing fails. This is a catch-all error for unexpected parsing failures.
   
-  \item \textbf{E002} --- ParseListFailure: Failed to parse a list or array structure. This occurs when a list definition (e.g., \texttt{[1, 2, 3]} or \texttt{(1, 2)}) is malformed or contains invalid elements that cannot be parsed correctly.
+  \item \textbf{E002} --- ParseListFailure: Failed to parse a list or array structure. This occurs when a list definition \texttt{[1, 2, 3]} is malformed or contains invalid elements that cannot be parsed correctly.
   
   \item \textbf{E003} --- UnknownOperator: Unsupported or unrecognized operator used in unit construction. Valid operators include \texttt{*}, \texttt{/}, \texttt{\^}, etc.
   
@@ -453,7 +453,7 @@ inlet_pressure: 101     k(p)            # Defined unit with kilo prefix
 \begin{enumerate}
   \item \textbf{W001} --- BackCompatibilityWarning: Missing \texttt{format} key in the version section. The file format version is required for proper parsing and backward compatibility with different file versions.
   
-  \item \textbf{W002} --- UnitFrameCompatibilityWarning: Missing \texttt{unit\_frame} key in the version section. The unit frame specification is needed for proper unit handling and compatibility with derived units.
+  \item \textbf{W002} --- UnitFrameCompatibilityWarning: Missing \texttt{unit\_frame} key in the version section. The unit frame reference is needed for proper unit handling and compatibility with derived units.
 \end{enumerate}
 
 \end{document}

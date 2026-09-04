@@ -15,12 +15,18 @@ P.S: Thanks for downloading the UnitValues repository `▽`ʃ♡
 
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Bowley-Systems/UnitValues/refs/heads/main/media/logo.png" alt="UnitValues" style="width:100%; max-width:100%; display:block;">
+  <img 
+    src="https://raw.githubusercontent.com/Bowley-Systems/UnitValues/refs/heads/main/media/logo.png" 
+    alt="UnitValues" 
+    width="100%" 
+    style="max-width:100%; display:block;"
+  >
 </p>
+
 <p align="center">
-    Define the type. Define the quality. <br>
+    <strong>Define the type. Define the quality.</strong><br>
     Make numerical meaning explicit before computation begins.
-</p>  
+</p>
 
 ### Overview
 ![Status](https://img.shields.io/badge/Status-Active-219EBC?style=flat-square)
@@ -32,7 +38,7 @@ UnitValues defines two domain-specific typed languages for numerical quantities:
 - Unit Types (`.ut`) for defining units from fundamental dimensions.
 - Unit Informed Values (`.uiv`) imports `Unit Types` and uses dimensional construction to encode numerical quantities.
 
-Language specification for `.ut` and `.uiv` can be found within [docs/language.pdf](./docs/language)
+> Language specification for `.ut` and `.uiv` can be found within [language.pdf](./docs/language.pdf)
 
 ---
 

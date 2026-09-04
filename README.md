@@ -33,10 +33,7 @@ P.S: Thanks for downloading the UnitValues repository `▽`ʃ♡
 ![DSL](https://img.shields.io/badge/Domain-DSL-ffb703?style=flat-square)
 ![License](https://img.shields.io/badge/License-MIT-219ebc?style=flat-square)
 
-UnitValues defines two domain-specific typed languages for numerical quantities: <br>
-
-- Unit Types (`.ut`) for defining units from fundamental dimensions.
-- Unit Informed Values (`.uiv`) imports `Unit Types` and uses dimensional construction to encode numerical quantities.
+UnitValues is a set of two domain-specific languages that encode dimensional quantities as types. The first language, `.ut`, defines units from fundamental dimensions. The second, `.uiv`, imports `.ut` and uses those constructs to encode numerical quantities across integers, floats, arrays, and complex numbers.
 
 > Language specification for `.ut` and `.uiv` can be found within [language.pdf](./docs/language.pdf)
 
@@ -55,7 +52,14 @@ pip install PicoUnits
 
 ### Example
 
-### .ut
+Both are dimensionally aware formats: `.ut` defines custom units, while `.uiv` encodes quantities as:
+
+```
+attribute: value prefix(unit)
+```
+
+#### .ut
+
 ```ut
 # Example Units - Derived from Fundamental Dimensions (kg, m, s, A, etc.)
 [version]
@@ -69,11 +73,11 @@ V: kg*m^2*s^-3*A^-1                   # Defines the unit for voltage
 
 > The fundamental unit semantics and prefixes `(kg, m, s, A, etc.)` & `(u, m, k, M, etc.)` is defined by the runtime environment.
 
-### .uiv
+#### .uiv
 
-```
+```uiv
 [version]
-format: 0.1.0
+format: 0.1.2
 unit_frame: units.ut
 
 [model]
@@ -89,9 +93,9 @@ inlet_pressure: 101     k(p)            # Defined unit `p` for pressure with kil
 
 ### Local Installation
 
-To install the UnitValues extension locally for Visual Studio Code:
+To install the extension locally for Visual Studio Code:
 
-- **From the Marketplace**: [Install UnitValues directly from the VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=wgbowley.UnitValues)
+> From the Marketplace: [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=wgbowley.UnitValues)
 
 ---
 

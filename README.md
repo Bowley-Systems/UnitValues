@@ -121,6 +121,6 @@ code --install-extension ./uiv-0.0.3.vsix --force
 
 ### Documentation
 
-All internal documentation can be found within this repo's [issues](https://github.com/Bowley-Systems/UnitValues/issues).
+For internal documentation, credits, and contributors, see [docs](./docs/README.md).
 
 ---

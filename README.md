@@ -32,7 +32,7 @@ UnitValues defines two domain-specific typed languages for numerical quantities:
 - Unit Types (`.ut`) for defining units from fundamental dimensions.
 - Unit Informed Values (`.uiv`) imports `Unit Types` and uses dimensional construction to encode numerical quantities.
 
-Language specification for `.ut` and `.uiv` can be found within [docs/language.pdf](./docs/language.pdf)
+Language specification for `.ut` and `.uiv` can be found within [docs/language.pdf](./docs/language)
 
 ---
 

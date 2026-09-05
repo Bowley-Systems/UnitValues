@@ -31,8 +31,8 @@ P.S: Thanks for downloading the UnitValues repository `▽`ʃ♡
 ### Overview
 ![Version](https://img.shields.io/badge/Version-0.1.2-ffb703?style=flat-square)
 ![Status](https://img.shields.io/badge/Status-Active-219EBC?style=flat-square)
-![DSL](https://img.shields.io/badge/Domain-DSL-ffb703?style=flat-square)
-![License](https://img.shields.io/badge/License-MIT-219ebc?style=flat-square)
+![License](https://img.shields.io/badge/License-MIT-ffb703?style=flat-square)
+![DSL](https://img.shields.io/badge/Domain-DSL-219EBC?style=flat-square)
 
 UnitValues is a set of two domain-specific languages that encode dimensional quantities as types. The first language, `.ut`, defines units from fundamental dimensions. The second, `.uiv`, imports `.ut` and uses those constructs to encode numerical quantities across integers, floats, arrays, and complex numbers.
 

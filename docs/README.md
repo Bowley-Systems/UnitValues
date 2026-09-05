@@ -1,6 +1,6 @@
 ### Docs
 
-> The format specification for `.ut` and `.uiv` can be found here: [language.pdf](./language.pdf)
+The format specification for `.ut` and `.uiv` can be found here: [language.pdf](./language.pdf)
 
 ---
 
@@ -8,15 +8,10 @@
 
 UnitValues is developed using:
 
-- `CSpell` for spell checking (Code Spell Checker, Bundled Dictionaries)
-- `LaTeX` for the language specification document
+- `LaTeX` & `LaTeX Workshop` for the language specification document
+- `CSpell Code Spell Checker` & `CSpell Bundled Dictionaries` for spell checking
 
 > Ensure that you add words to `CSpell`'s `cSpell.json`, not your personal dictionary.
-
-My personal VS Code workflow also includes:
-- `LaTeX Workshop`
-- `LaTeX`
-- `CSpell Code Spell Checker` & `CSpell Bundled Dictionaries`
 
 ---
 

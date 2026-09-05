@@ -36,7 +36,7 @@ P.S: Thanks for downloading the UnitValues repository `▽`ʃ♡
 
 UnitValues is a set of two domain-specific languages that encode dimensional quantities as types. The first language, `.ut`, defines units from fundamental dimensions. The second, `.uiv`, imports `.ut` and uses those constructs to encode numerical quantities across integers, floats, arrays, and complex numbers.
 
-> Language specification for `.ut` and `.uiv` can be found within [language.pdf](./docs/language.pdf)
+Language specification for `.ut` and `.uiv` can be found within [language.pdf](./docs/language.pdf)
 
 #### Implementation
 

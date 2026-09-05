@@ -38,6 +38,8 @@ UnitValues is a set of two domain-specific languages that encode dimensional qua
 
 > Language specification for `.ut` and `.uiv` can be found within [language.pdf](./docs/language.pdf)
 
+---
+
 ### Implementation
 
 UnitValues is implemented by [PicoUnits](https://github.com/Bowley-Systems/PicoUnits).  

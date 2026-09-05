@@ -96,14 +96,26 @@
 }
 
 \lstdefinelanguage{UnitValuesUIV}{
-  morekeywords={
-    version, format, unit_frame
-  },
+  morekeywords={version},
   keywordstyle=\color{cerulean}\bfseries,
   morekeywords=[2]{
-    num_samples, sample_size, output_energy, output_signal, inlet_pressure,
-    relative_permittivity, temperature, temperature_conductivity, my_spring,
-    density, V, ρ
+    num_samples, 
+    sample_size, 
+    output_energy, 
+    output_signal, 
+    inlet_pressure,
+    relative_permittivity, 
+    temperature, 
+    temperature_conductivity, 
+    my_spring,
+    density,
+    unit_frame,
+    format,
+    real_value,
+    complex_value,
+    current_range,
+    magnet_grade,
+    key
   },
   keywordstyle=[2]\color{codepurple},
   morecomment=[l]{\#},
@@ -140,11 +152,11 @@
 
     \vspace{0.4cm}
 
-    {\Large\textcolor{darkgray}{Version 0.1.1}\par}
+    {\Large\textcolor{darkgray}{Version 0.1.2}\par}
 
     \vspace{0.25cm}
 
-    {\large\textcolor{darkgray}{August 21, 2026}\par}
+    {\large\textcolor{darkgray}{\today}\par}
 
     \vfill
   \end{center}
@@ -170,12 +182,9 @@
 
 \subsection{Purpose}
 
-UnitValues defines two domain-specific typed languages for numerical quantities: 
-
-\begin{itemize}
-  \item \texttt{.ut} (unit types) for defining units from fundamental dimensions.
-  \item \texttt{.uiv} (unit informed values) imports Unit Types and uses dimensional construction to encode numerical quantities.
-\end{itemize}
+UnitValues is a set of two domain-specific languages that encode dimensional quantities as types. The first language, 
+\texttt{.ut}, defines units from fundamental dimensions. The second, \texttt{.uiv}, imports 
+\texttt{.ut} and uses those constructs to encode numerical quantities across integers, floats, arrays, and complex numbers.
 
 \subsection{Scope}
 
@@ -224,6 +233,7 @@ Common section types include:
         (length, material).
 \end{itemize}
 
+
 \newpage
 
 \needspace{3\baselineskip}
@@ -238,10 +248,10 @@ key: value prefix(unit)
 
 Examples:
 
-\begin{itemize}
-  \item \texttt{density: 8930 (kg/m\string^3)}
-  \item \texttt{temperature: 298.15 (K)}
-\end{itemize}
+\begin{lstlisting}[language=UnitValuesUIV]
+temperature: 298.15 (K)
+density: 8930 (kg/m^3)
+\end{lstlisting}
 
 \needspace{3\baselineskip}
 \subsection{Numeric Values}
@@ -278,37 +288,43 @@ SI prefixes can be applied to units:
   $10^{-6}\,\mathrm{m^2}$.
 \end{quote}
 
+\newpage
+
 \needspace{3\baselineskip}
+
 \subsection{Arrays and Tuples}
 
 Arrays are denoted with square brackets:
 
-\needspace{5\baselineskip}
 \begin{lstlisting}[language=UnitValuesUIV]
 relative_permittivity: [1, 1]
 \end{lstlisting}
 
-Tuples (key-value pairs) use nested arrays:
+An array may be followed by a single unit expression, 
+applied to all columns, or by comma-separated unit expressions 
+assigned to corresponding columns. 
 
-\needspace{5\baselineskip}
+\begin{lstlisting}[language=UnitValuesUIV]
+current_range: [0, 3] (A)
+magnet_grade: [0.836, 1.10] M(A_m), (T)
+\end{lstlisting}
+
+Nested arrays represent 2D tabular data:
+
 \begin{lstlisting}[language=UnitValuesUIV]
 temperature_conductivity: [
-  [273.0, 401.0],
-  [473.0, 389.0]
+[273.0, 401.0],
+[473.0, 389.0]
 ] (K), (k)
 \end{lstlisting}
 
 \begin{quote}
-  \textbf{Note:}
+\textbf{Note:}
 
-  Nested arrays may represent column-wise data. When multiple unit
-  expressions follow an array, each unit is assigned to the corresponding
-  column. Thus, \texttt{(K), (k)} assigns kelvin to the first column and
-  the derived unit \texttt{k} to the second column. The unit \texttt{k}
-  is defined in the active unit frame.
+Nested arrays represent column-wise data. When multiple unit expressions follow an array, 
+each is assigned to the corresponding column. 
 \end{quote}
 
-\newpage
 \needspace{3\baselineskip}
 \subsection{Strings and Comments}
 
@@ -395,7 +411,6 @@ V: kg*m^2*s^-3*A^-1       # Defines the unit for voltage
   \& \texttt{(u, m, k, M, etc.)} is defined by the runtime environment.
 \end{quote}
 
-\newpage
 \needspace{5\baselineskip}
 \subsection{.uiv File Example}
 
@@ -415,6 +430,8 @@ output_energy: 1.0      (kg*m^2*s^-2)   # Defines unit via construction
 output_signal: 5.0      (V)             # Defined unit `V` for voltage
 inlet_pressure: 101     k(p)            # Defined unit with kilo prefix
 \end{lstlisting}
+
+\newpage
 
 % ============================================================
 \section{Error Reference}

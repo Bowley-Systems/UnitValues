@@ -27,7 +27,6 @@ P.S: Thanks for downloading the UnitValues repository `▽`ʃ♡
     <strong>Define the type. Define the quality.</strong><br>
     Make numerical meaning explicit before computation begins.
 </p>
-<br>
 
 ### Overview
 ![Version](https://img.shields.io/badge/Version-0.1.2-ffb703?style=flat-square)
